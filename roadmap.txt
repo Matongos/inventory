@@ -1,0 +1,189 @@
+# Inventory Management System - Development Roadmap
+
+## Project Overview
+Simple inventory management system with Flask backend, React frontend, and SQLite database.
+Based on the purple-themed UI design with clean, modern interface.
+
+## Technology Stack
+- **Backend**: Python + Flask
+- **Frontend**: JavaScript + React + Vite
+- **Database**: SQLite (simple and easy to set up)
+- **Authentication**: Flask sessions with role-based access
+- **Styling**: CSS with purple theme matching the design
+
+## Project Structure
+```
+inventory_management/
+├── backend/
+│   ├── app.py                 # Flask application
+│   ├── models.py              # Database models
+│   ├── routes/                # API routes
+│   ├── database.db            # SQLite database
+│   └── requirements.txt       # Python dependencies
+├── frontend/
+│   ├── src/
+│   │   ├── components/        # React components
+│   │   ├── pages/             # Page components
+│   │   ├── styles/            # CSS files
+│   │   └── App.jsx            # Main app component
+│   ├── package.json
+│   └── vite.config.js
+└── roadmap.txt
+```
+
+## Development Milestones
+
+### Phase 1: Project Foundation (Days 1-2)
+- [x] Create roadmap and project structure
+- [x] Set up Flask backend with basic configuration
+- [x] Set up React + Vite frontend
+- [x] Create SQLite database with initial schema
+- [x] Implement basic routing structure
+
+### Phase 2: Authentication & User Management (Days 3-4)
+- [x] Create User model with simplified roles (superuser, user)
+- [x] Implement login/logout functionality
+- [x] Create superuser account (pre-built in system)
+- [x] Add session management and role-based access control
+- [x] Build login page matching the purple theme
+
+### Phase 3: Core Database Models (Day 5)
+- [x] Product model (name, code, description, price, stock)
+- [x] Category model (name, description, icon)
+- [x] Store model (name, location, employees, items)
+- [x] Sales/Finance model for tracking transactions
+- [x] Relationships between models
+
+### Phase 4: Dashboard/Home Page (Days 6-7)
+- [x] Recent activity section with metrics
+- [x] Sales chart with confirmed/packed/refunded/shipped status
+- [x] Stock numbers section (low stock, categories, refunded items)
+- [x] Store list with employee and item counts
+- [x] Top item categories grid with icons
+
+### Phase 5: Products Management (Days 8-9)
+- [x] Products list page with search and filtering
+- [x] Product status management (Active, Low in stock, Sold out)
+- [x] Product details view
+- [x] Add/Edit product functionality
+- [x] Product image upload capability
+- [x] Category assignment for products
+
+### Phase 6: Categories Management (Day 10)
+- [x] Categories grid view with icons and item counts
+- [x] Add/Edit category functionality
+- [x] Category-based product filtering
+- [x] Icons for different categories (Bottoms, Coats, Jeans, etc.)
+
+### Phase 7: Stores Management (Days 11-12)
+- [x] Stores grid view with images
+- [x] Store details modal with statistics
+- [x] Store-specific inventory tracking
+- [ ] Employee management per store
+- [x] Add/Edit store functionality
+
+### Phase 8: Finance/Analytics (Days 13-14)
+- [x] Sales analytics with date range selection
+- [x] Net sales and gross profit charts
+- [x] Revenue breakdown by category
+- [x] Margin calculations
+- [x] Financial reporting features
+
+### Phase 9: Settings & System Management (Days 15-16)
+- [x] Data import functionality (CSV stock import)
+- [x] Theme switcher (Purple ↔ Black & White)
+- [x] System backup functionality
+- [x] Settings page with organized sections
+- [x] Import templates and validation
+
+### Phase 10: Polish & Testing (Days 17-18)
+- [ ] UI/UX improvements and responsive design
+- [ ] Error handling and validation
+- [ ] Testing all functionality
+- [ ] Performance optimization
+- [ ] Documentation and deployment preparation
+
+## Key Features to Implement
+
+### Authentication System
+- Superuser account: admin/admin123 (pre-built)
+- Simplified role-based access (Superuser: full access + management, User: standard access)
+- Session management with secure logout
+
+### Dashboard Features
+- Recent activity metrics (741 new items, 123 new orders, etc.)
+- Sales status tracking (Confirmed, Packed, Refunded, Shipped)
+- Low stock alerts (12 items)
+- Store performance overview
+
+### Product Management
+- Product CRUD operations
+- Category assignment
+- Stock level tracking
+- Multi-store inventory
+- Product status (Active, Low stock, Sold out)
+- Image upload for products
+
+### Category System
+- Visual category cards with icons
+- Item count per category
+- Category-based filtering
+- Icon management for categories
+
+### Store Management
+- Store locations with images
+- Employee tracking per store
+- Inventory per store
+- Store performance metrics
+- Customer satisfaction tracking
+
+### Finance & Analytics
+- Sales charts and graphs
+- Revenue breakdown
+- Profit margin analysis
+- Date range filtering
+- Export capabilities
+
+### Settings & Configuration
+- User profile management
+- Role and permission settings
+- Store configuration
+- System preferences
+
+## Design Guidelines
+- Purple theme (#7C3AED primary color)
+- Clean, modern interface
+- Card-based layouts
+- Consistent iconography
+- Responsive design
+- Intuitive navigation with sidebar
+
+## Database Schema Overview
+```sql
+Users: id, username, password, role, name, email, store_id
+Products: id, name, code, description, price, category_id, created_at
+Categories: id, name, description, icon, item_count
+Stores: id, name, location, image, employees_count, items_count
+Inventory: id, product_id, store_id, quantity, min_stock
+Sales: id, product_id, store_id, quantity, price, date, status
+```
+
+## Success Criteria
+- [x] Roadmap completed and approved
+- [ ] Superuser can log in immediately after setup
+- [ ] All main pages functional (Home, Products, Categories, Stores, Finance, Settings)
+- [ ] CRUD operations work for all entities
+- [ ] Role-based permissions enforced
+- [ ] Clean, responsive UI matching design
+- [ ] Basic analytics and reporting functional
+
+## Next Steps
+1. Start with backend setup and database models
+2. Create superuser account and authentication
+3. Build frontend structure and routing
+4. Implement each page systematically
+5. Test and polish the application
+
+---
+*Estimated Timeline: 18 days for full implementation*
+*Priority: Keep it simple, functional, and matching the provided design*
